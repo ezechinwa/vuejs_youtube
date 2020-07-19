@@ -1,11 +1,14 @@
 <template>
   <div class="card-details">
     <h1>View the user details</h1>
+    <p>UserName: {{name}}</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["name"]
+};
 </script>
 
 <style scoped>

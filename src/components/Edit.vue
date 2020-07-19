@@ -12,7 +12,7 @@ export default {};
 .card-edit {
   border: 1px solid black;
   padding: 25px;
-  background-color: darksalmon;
+  background-color: greenyellow;
   margin: 10px;
 }
 </style>

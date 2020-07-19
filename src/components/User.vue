@@ -2,9 +2,12 @@
   <div class="card-holder">
     <h1>The User Component</h1>
     <p>I'm an awesome user</p>
+    <input type="text" v-model="name" />
+
+    <button @click="changeName">Change Name</button>
 
     <div class="card-layout">
-      <app-details></app-details>
+      <app-details v-bind:name="name"></app-details>
       <app-edit></app-edit>
     </div>
   </div>
@@ -18,7 +21,14 @@ export default {
   components: { "app-edit": Edit, "app-details": Details },
 
   data: function() {
-    return {};
+    return {
+      name: "Williams"
+    };
+  },
+  methods: {
+    changeName() {
+      this.name = "Chinwa";
+    }
   }
 };
 </script>
@@ -26,7 +36,7 @@ export default {
 .card-holder {
   width: 600px;
   border: 1px solid black;
-  background-color: aquamarine;
+  background-color: lightblue;
   margin: 0 auto;
   padding: 10px;
 }
