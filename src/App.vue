@@ -1,6 +1,8 @@
 <template>
-  <div class="card-holder">
-    <app-quotes-layout></app-quotes-layout>
+  <div>
+    <div class="container mx-auto mt-3">
+      <app-quotes-layout></app-quotes-layout>
+    </div>
   </div>
 </template>
 <script>
