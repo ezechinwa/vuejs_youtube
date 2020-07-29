@@ -7,7 +7,9 @@
     <button @click="changeName">Change Name</button>
 
     <div class="card-layout">
-      <app-details v-bind:name="name"></app-details>
+      <app-details @resetName="name = $event">
+        <p slot="name">{{name}}</p>
+      </app-details>
       <app-edit></app-edit>
     </div>
   </div>
@@ -20,16 +22,61 @@ import Details from "../components/Details";
 export default {
   components: { "app-edit": Edit, "app-details": Details },
 
-  data: function() {
+  data: function () {
     return {
-      name: "Williams"
+      name: "Williams",
+      a: 0,
     };
   },
   methods: {
     changeName() {
       this.name = "Chinwa";
-    }
-  }
+    },
+  },
+
+  created: function () {
+    // `this` points to the vm instance
+    let v = this.a + 1;
+    console.log("created: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+
+  beforeCreate: function () {
+    let v = this.a + 1;
+    console.log("beforeCreate: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+  beforeMount: function () {
+    let v = this.a + 1;
+    console.log("beforeMount: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+  mounted: function () {
+    let v = this.a + 1;
+    console.log("mounted: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+
+  beforeUpdate: function () {
+    let v = this.a + 1;
+    console.log("beforeUpdate: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+  updated: function () {
+    let v = this.a + 1;
+    console.log("updated: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+  beforeDestroy: function () {
+    let v = this.a + 1;
+    console.log("beforeDestroy: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
+  destroyed: function () {
+    let v = this.a + 1;
+    console.log("destroyed: a was: " + this.a + " changed to " + v);
+    this.a++;
+  },
 };
 </script>
 <style scoped>
