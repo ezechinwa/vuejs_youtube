@@ -1,17 +1,17 @@
 <template>
   <div class="card-holder">
-    <app-user></app-user>
+    <app-quotes-layout></app-quotes-layout>
   </div>
 </template>
 <script>
-import User from "../src/components/User";
+import Quotes from "../src/components/Quotes";
 
 export default {
-  components: { "app-user": User },
+  components: { "app-quotes-layout": Quotes },
 
-  data: function() {
+  data: function () {
     return {};
-  }
+  },
 };
 </script>
 <style scoped>
