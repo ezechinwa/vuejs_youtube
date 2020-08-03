@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-on:click="$emit('delete')">
     <slot></slot>
   </section>
 </template>

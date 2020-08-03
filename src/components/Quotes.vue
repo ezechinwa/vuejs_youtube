@@ -35,7 +35,7 @@
     <app-cards>
       <div class="flex space-x-4 p-4 border-2">
         <div v-for="(quote,index) in quotes" :key="index">
-          <app-cards class="p-8 border-2">
+          <app-cards class="p-8 border-2" v-on:delete="deleteQuote(index)">
             <h1>{{quote}}</h1>
           </app-cards>
         </div>
@@ -59,6 +59,13 @@ export default {
     };
   },
   methods: {
+    deleteQuote: function (index) {
+      if (index >= 0) {
+        var temp = [...this.quotes];
+        temp.splice(index, 1);
+        this.quotes = temp;
+      }
+    },
     addQuote: function () {
       //   if (this.newquote != "" && this.quotes.length < 10) {
       //     this.quotes.push(this.newquote);
